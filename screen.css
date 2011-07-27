@@ -79,12 +79,14 @@ ul#courses {
 
 ul#courses h2 {
   margin-bottom:15px;
+  clear:left;
 }
 
 ul#courses .course-title {
   font-size:1.2em;
   color:#cc3300;
   line-height:30px;
+  float:left;
 }
 
 .course {
@@ -95,12 +97,15 @@ ul#courses .course-title {
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
   border-radius:5px;
+  float:left;
+  width:684px;
 }
 
 ul.grades-list {
   list-style:none;
   width:370px;
   float:right;
+  display:block;
   padding-top:2px;
 }
 
