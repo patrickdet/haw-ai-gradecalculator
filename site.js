@@ -19,11 +19,7 @@ $(document).ready(function() {
     var selected = $(".selected");
     selected.each(function() {
       var parent = $(this).parent().parent().parent();
-      if (parent.data("grade-multiplier") === undefined) {
-        points += parent.data("credit-points") * 15;
-      } else {
-        points += parseFloat($(this).html()) * parent.data("credit-points");
-      }
+      points += parseFloat($(this).html()) * parent.data("credit-points");
       totalGradeWeight += parent.data("credit-points");
     });
     if (totalGradeWeight == 0) {
