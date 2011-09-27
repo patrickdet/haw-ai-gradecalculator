@@ -9,6 +9,19 @@ $(document).ready(function() {
       });
       $(this).addClass("selected");
     }
+
+    if (typeof(window.localStorage) === "object") {
+      var json = window.localStorage.hawAiGradeCalculator || "{}";
+      var grades = JSON.parse(json);
+      var course = $(this).parent().parent().parent().attr("id");
+      if ($(this).hasClass("selected")) {
+        grades[course] = $(this).html();
+      } else {
+        delete grades[course];
+      }
+      window.localStorage.setItem("hawAiGradeCalculator", JSON.stringify(grades));
+    }
+
     calculate();
     return false;
   });
@@ -34,5 +47,20 @@ $(document).ready(function() {
     $("#infobox").toggle();
     return false;
   });
+
+  // pre-select remembered grades
+  if (typeof(window.localStorage) === "object") {
+    var json = window.localStorage.getItem("hawAiGradeCalculator");
+    if (json !== null) {
+      var grades = JSON.parse(window.localStorage.getItem("hawAiGradeCalculator"));
+      for (var course in grades) {
+        if (grades.hasOwnProperty(course)) {
+          var grade = parseInt(grades[course], 10);
+          $("#" + course + " li:nth-child(" + (15 - grade + 1) + ") a").addClass("selected");
+        }
+      }
+    }
+    calculate();
+  }
 });
 
