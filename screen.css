@@ -41,7 +41,7 @@ h3 {
   font-size:1.3em;
 }
 
-#calculated-points {
+#calculated-points, #calculated-grade {
   color:#adadad;
   font-size:0.7em;
 }

@@ -35,9 +35,14 @@ $(document).ready(function() {
       points += parseFloat($(this).html()) * parent.data("credit-points");
       totalGradeWeight += parent.data("credit-points");
     });
+    var grade = 0.0;
+    grade = (17 - ((points/totalGradeWeight)*10)/10) /3;
+
     if (totalGradeWeight == 0) {
       $("#grade").text(0);
+      $("#calculated-grade").text(0);
     } else {
+      $("#calculated-grade").text(grade.toFixed(2));
       $("#grade").text(Math.round((points/totalGradeWeight)*10)/10);
     }
     $("#calculated-points").text("(" + points + " Punkte)");
