@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 132) {
+      $('#grade-box').addClass('grade-box-fixed');
+      $('body').addClass('grade-box-fixed');
+    }
+
+    if ($(window).scrollTop() < 133) {
+      $('#grade-box').removeClass('grade-box-fixed');
+      $('body').removeClass('grade-box-fixed');
+    }
+  });
+
+
   $("li > a").click(function() {
     if ($(this).hasClass("selected")) {
       $(this).toggleClass("selected");
@@ -63,4 +76,3 @@ $(document).ready(function() {
     calculate();
   }
 });
-

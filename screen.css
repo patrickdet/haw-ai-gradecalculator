@@ -3,6 +3,11 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial;
   color:#444;
 }
+
+body.grade-box-fixed {
+  margin-top: 55px;
+}
+
 #outer {
 
 }
@@ -33,6 +38,19 @@ h3 {
 #grade-box {
   font-size:1.5em;
   margin-top:25px;
+  text-align: center;
+  height: 30px;
+  width: 700px;
+}
+
+#grade-box.grade-box-fixed {
+  background-color: #fafafa;
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  height: 50px;
+  padding-top: 10px;
+  border-bottom: 1px solid #3d3d3d;
 }
 
 #grade {
